@@ -16,6 +16,7 @@ function App() {
         {dataPopular.results.map((data) => (
           <div key={data.id}>test</div>
         ))}
+        fist page
       </div>
     );
   } else if (isLoadingPopular) {
