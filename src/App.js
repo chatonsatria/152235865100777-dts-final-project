@@ -1,25 +1,28 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import { useGetListOfGamesQuery } from "./services/RapidAPI";
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+  const {
+    data: dataPopular,
+    error: errorPopular,
+    isLoading: isLoadingPopular,
+  } = useGetListOfGamesQuery();
+
+  console.log(dataPopular);
+
+  if (dataPopular) {
+    return (
+      <div className="App underline text-3xl">
+        {dataPopular.results.map((data) => (
+          <div key={data.id}>test</div>
+        ))}
+      </div>
+    );
+  } else if (isLoadingPopular) {
+    return <div>Loading</div>;
+  } else if (errorPopular) {
+    return <div>Error</div>;
+  }
 }
 
 export default App;
