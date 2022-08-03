@@ -33,11 +33,7 @@ const SidebarBrowse = () => {
         onClick={toggleShowhandler}
         className="inline-flex w-[200px] gap-x-3 items-center text-slate-500"
       >
-        <img
-          src=""
-          alt=""
-          className="flex aspect-square w-full max-w-[30px] rounded-md bg-slate-400"
-        />
+        <div className="flex aspect-square w-full max-w-[30px] rounded-md bg-slate-800" />
         <p>{text}</p>
       </button>
     </div>
