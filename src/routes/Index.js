@@ -4,6 +4,7 @@ import ProtectedRoute from "../components/navBar/ProtectedRoute";
 import Platforms from "../pages/platforms/Platforms";
 import AllGames from "../pages/allGames/AllGames";
 import Detail from "../pages/detail/Detail";
+import Footer from "../pages/footer/Footer";
 
 const MainNavbar = React.lazy(() => import("../components/navBar/MainNavbar"));
 const Home = React.lazy(() => import("../pages/home/Home"));
@@ -20,7 +21,7 @@ const Index = () => {
             <MainSideBar />
           </React.Suspense>
         </div>
-        <div className="md:ml-72 flex flex-col w-full gap-y-8">
+        <div className="md:ml-72 justify-between flex flex-col w-full gap-y-8">
           {/* page navbar */}
           <React.Suspense fallback={<p>Loading...</p>}>
             <MainNavbar />
@@ -48,6 +49,11 @@ const Index = () => {
             />
           </Routes>
         </div>
+      </div>
+      <div className="flex w-full mt-24">
+        <React.Suspense fallback={<p>Loading...</p>}>
+          <Footer />
+        </React.Suspense>
       </div>
     </div>
   );
