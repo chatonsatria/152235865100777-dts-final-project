@@ -9,6 +9,7 @@ import Login from "./pages/auth/Login";
 import AuthContextProvider from "./store/auth-context";
 import Profile from "./pages/profile/Profile";
 import ProtectedRoute from "./components/navBar/ProtectedRoute";
+import Register from "./pages/auth/Register";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
@@ -18,6 +19,7 @@ root.render(
         <Routes>
           <Route path="/*" element={<IndexRouters />} />
           <Route path="/login" element={<Login />} />
+          <Route path="/register" element={<Register />} />
           <Route
             path="/profile"
             element={

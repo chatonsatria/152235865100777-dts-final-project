@@ -28,10 +28,10 @@ const FormInput = (props) => {
           {/* input email */}
           <div>
             <input
-              placeholder="EMAIL"
+              placeholder="Email"
               ref={emailRef}
               onChange={valueChangeHandler}
-              className={`text-[26px] w-full md:w-[522px] h-[100px] text-white px-4 font-medium bg-transparent outline-none border ${
+              className={`text-base w-full py-1.5 text-white px-4 font-medium bg-transparent outline-none border ${
                 props.isNotValid ? "border-[#CB3A31]" : "border-[#FFFFFF]"
               }`}
               type="text"
@@ -40,12 +40,12 @@ const FormInput = (props) => {
           {/* input passsword */}
           <div>
             <div
-              className={`relative flex text-[26px] w-full md:w-[522px] h-[100px] text-white font-medium outline-none border ${
+              className={`relative flex items-center text-base w-full py-1.5 text-white font-medium outline-none border ${
                 props.isNotValid ? "border-[#CB3A31]" : "border-[#FFFFFF]"
               }`}
             >
               <input
-                placeholder="PASSWORD"
+                placeholder="Password"
                 ref={passwordRef}
                 onChange={valueChangeHandler}
                 className="px-4 w-full outline-none bg-transparent pr-7"
@@ -111,8 +111,8 @@ const FormInput = (props) => {
           {!props.isNotValid && <p className="w-full h-[10px]"></p>}
         </div>
         <div className="text-center mt-6">
-          <button className="text-white bg-[#E50913] font-bold w-full md:w-[522px] h-[100px]">
-            LOGIN
+          <button className="text-white bg-[#E50913] font-bold w-full py-1.5">
+            Login
           </button>
         </div>
         {/* end of button */}

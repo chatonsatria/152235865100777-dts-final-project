@@ -15,7 +15,7 @@ const Register = () => {
     localStorage.setItem("token", token);
     localStorage.setItem("useremail", useremail);
     setTimeout(() => {
-      navigate("/dts-movies/home");
+      navigate("/");
     }, 3000);
   };
 
@@ -63,15 +63,16 @@ const Register = () => {
   }, [windowSize.innerWidth]);
 
   return (
-    <div className="relative flex flex-col md:flex-row w-full min-h-screen bg-black text-white">
-      <div className="absolute w-full h-full bg-gradient-to-r from-[#141414] via-[#141414]">
-        <div className="flex flex-row-reverse w-full h-full justify-center md:justify-end items-center md:pl-36">
-          <RegisterFormInput
-            submit={(email, password) => handleSubmit(email, password)}
-            isNotValid={isFailed}
-            changeValue={() => setIsFailed(false)}
-          />
-        </div>
+    <div className="flex w-full min-h-screen items-center justify-center bg-[#141414]">
+      <div className="flex flex-col gap-y-4 bg-[#3B3B3B] p-8 rounded-md">
+        <p className="font-semibold text-3xl text-white text-center">
+          REGISTER
+        </p>
+        <RegisterFormInput
+          submit={(email, password) => handleSubmit(email, password)}
+          isNotValid={isFailed}
+          changeValue={() => setIsFailed(false)}
+        />
       </div>
     </div>
   );

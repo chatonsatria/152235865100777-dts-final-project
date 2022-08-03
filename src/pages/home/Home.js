@@ -22,6 +22,7 @@ const Home = () => {
 
   useEffect(() => {
     get();
+    document.title = "R A W R";
   }, []);
 
   return (
