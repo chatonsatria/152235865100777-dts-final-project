@@ -1,22 +1,33 @@
-import React from "react";
-import ReactDOM from "react-dom/client";
 import "./index.css";
-import reportWebVitals from "./reportWebVitals";
+import React from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import Index from "./routes/Index";
-import App from "./App";
-import { Provider } from "react-redux";
-import store from "./store/store";
+import ReactDOM from "react-dom/client";
+import reportWebVitals from "./reportWebVitals";
+
+import IndexRouters from "./routes/Index";
+import Login from "./pages/auth/Login";
+import AuthContextProvider from "./store/auth-context";
+import Profile from "./pages/profile/Profile";
+import ProtectedRoute from "./components/navBar/ProtectedRoute";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
     <BrowserRouter>
-      <Provider store={store}>
+      <AuthContextProvider>
         <Routes>
-          <Route path="/" element={<App />} />
+          <Route path="/*" element={<IndexRouters />} />
+          <Route path="/login" element={<Login />} />
+          <Route
+            path="/profile"
+            element={
+              <ProtectedRoute>
+                <Profile />
+              </ProtectedRoute>
+            }
+          />
         </Routes>
-      </Provider>
+      </AuthContextProvider>
     </BrowserRouter>
   </React.StrictMode>
 );
