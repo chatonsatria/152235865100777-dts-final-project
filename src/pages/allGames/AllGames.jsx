@@ -14,15 +14,13 @@ const AllGames = () => {
   const [platformId, setPlatformId] = useState();
   const [slugFilter, setSlugFilter] = useState();
 
-  console.log(platformId);
-  console.log(slugFilter);
-
   useEffect(() => {
     if (slug !== "all") {
-      get(`&platforms=${slug}`, "filter");
+      get(`&genres=${slug}`, "filter");
     } else {
       get();
     }
+    // eslint-disable-next-line
   }, [reGetData]);
 
   useEffect(() => {
@@ -33,10 +31,12 @@ const AllGames = () => {
     } else {
       get(`&ordering=${slugFilter}`, "filter");
     }
+    // eslint-disable-next-line
   }, [platformId, slugFilter]);
 
   useEffect(() => {
     reGetHandler();
+    // eslint-disable-next-line
   }, [slug]);
 
   return (

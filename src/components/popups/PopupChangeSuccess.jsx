@@ -1,18 +1,18 @@
 import { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 
-const PopUpChangeProfile = (props) => {
+const PopupChangeSuccess = (props) => {
   let navigate = useNavigate();
   useEffect(() => {
     setTimeout(() => {
-      navigate("/dts-movies/home");
+      navigate("/");
     }, 3000);
-  }, []);
+  }, [navigate]);
   return (
     <div
       className={`${
         props.display ? "block" : "hidden"
-      } fixed z-[101] overflow-y-auto top-0 w-full h-full left-0 bg-gray-900 flex justify-center backdrop-blur`}
+      } fixed z-[400] overflow-y-auto top-0 w-full h-full left-0 bg-gray-900 flex justify-center backdrop-blur`}
       style={{ backgroundColor: "rgba(17,24,39, 0.75" }}
     >
       {/* pop up hapus data */}
@@ -25,4 +25,4 @@ const PopUpChangeProfile = (props) => {
     </div>
   );
 };
-export default PopUpChangeProfile;
+export default PopupChangeSuccess;

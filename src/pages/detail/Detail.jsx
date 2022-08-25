@@ -7,18 +7,18 @@ const Detail = () => {
   const { slug } = useParams();
   const { data, get } = useGetFilter(`games/${slug}`);
   const { data: dataPhotos, get: getPhotos } = useGetFilter("games");
-  console.log("data from get filter", data.feedback);
   const [reGetData, setReGetData] = useState("");
-  const reGetHandler = () => {
-    setReGetData(slug);
-  };
 
   useEffect(() => {
     get("", "slug");
     getPhotos(`/${slug}/screenshots`, "slug");
-  }, [reGetData]);
+    // eslint-disable-next-line
+  }, [reGetData, slug]);
 
   useEffect(() => {
+    const reGetHandler = () => {
+      setReGetData(slug);
+    };
     reGetHandler();
   }, [slug]);
 

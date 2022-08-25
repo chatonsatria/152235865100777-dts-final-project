@@ -16,6 +16,7 @@ const PlatformFilter = (props) => {
 
   useEffect(() => {
     get();
+    // eslint-disable-next-line
   }, []);
 
   return (
@@ -33,11 +34,11 @@ const PlatformFilter = (props) => {
           fill="none"
           viewBox="0 0 24 24"
           stroke="currentColor"
-          stroke-width="2"
+          strokeWidth="2"
         >
           <path
-            stroke-linecap="round"
-            stroke-linejoin="round"
+            strokeLinecap="round"
+            strokeLinejoin="round"
             d="M19 9l-7 7-7-7"
           />
         </svg>
@@ -48,8 +49,9 @@ const PlatformFilter = (props) => {
         <div className="absolute z-[102] flex flex-col gap-y-3 bg-white p-4 w-full text-black rounded-md">
           {data.feedback ? (
             <>
-              {data.feedback.results.map((data) => (
+              {data.feedback.results.map((data, key) => (
                 <button
+                  key={key}
                   onClick={() => platformChangeHandler(data.id, data.name)}
                   className="text-left font-medium text-sm"
                 >

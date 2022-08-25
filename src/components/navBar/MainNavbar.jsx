@@ -4,8 +4,7 @@ import NavLogout from "./navbarMenu/NavLogout";
 import { useContext, useEffect, useState } from "react";
 import { AuthContext } from "../../store/auth-context";
 import { Link } from "react-router-dom";
-import PopUpLogout from "../popups/PopUpLogout";
-import MainSidebar from "./MainSidebar";
+import PopUpLogout from "../popups/PopupLogout";
 import CustomSideMainLink from "./sidebarMenu/CustomSideMainLink";
 
 const MainNavbar = () => {

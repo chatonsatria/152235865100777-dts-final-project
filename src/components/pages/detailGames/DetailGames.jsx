@@ -5,20 +5,7 @@ import useGetFilter from "../../../hooks/useGetFilter";
 
 const Detail = (props) => {
   const { slug } = useParams();
-  console.log("SLUGG", slug);
   const { data, get } = useGetFilter("games");
-  console.log("DATA DETAIL SIMILIAR", data.feedback);
-  console.log(data.feedback);
-  const [selected, setSelected] = useState(null);
-  const setDate = (date) => {
-    const newDate = new Date(date);
-    const localDate = newDate.toLocaleString("id-ID", {
-      month: "long",
-      day: "numeric",
-      year: "numeric",
-    });
-    return localDate;
-  };
 
   const [hover, setHover] = useState(null);
   const [gameId, setGameId] = useState(null);
@@ -40,12 +27,12 @@ const Detail = (props) => {
       props.data.genres.slice(-1).forEach((data) => {
         genres = data.slug;
         setSlugTemp(data.slug);
-        console.log("genres", genres);
       });
       setTimeout(() => {
         get(`&genres=${genres}`, "filter");
       }, 2000);
     }
+    // eslint-disable-next-line
   }, [props.data, slug]);
 
   return (

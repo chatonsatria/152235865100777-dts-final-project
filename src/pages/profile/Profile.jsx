@@ -1,4 +1,4 @@
-import ProfilePictList from "../../components/pages/profile/ProfilePictList";
+import ProfilePictList from "../../components/pages/profile/ProfilePictureList";
 
 const Profile = () => {
   return (

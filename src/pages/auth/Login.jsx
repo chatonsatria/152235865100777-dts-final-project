@@ -1,4 +1,4 @@
-import { useContext, useEffect, useState } from "react";
+import { useContext, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import LoginFormInput from "../../components/auth/login/FormInput";
 import { signInWithEmailAndPassword } from "firebase/auth";
@@ -22,39 +22,11 @@ const Login = () => {
     const password = passwordData;
     try {
       const { user } = await signInWithEmailAndPassword(auth, email, password);
-      console.log(user);
       authDataHandler(user.accessToken, user.email);
     } catch (error) {
       setIsFailed(true);
     }
   };
-
-  // get screen widht
-  const [windowSize, setWindowSize] = useState(getWindowSize());
-  useEffect(() => {
-    function handleWindowResize() {
-      setWindowSize(getWindowSize());
-    }
-    window.addEventListener("resize", handleWindowResize);
-    return () => {
-      window.removeEventListener("resize", handleWindowResize);
-    };
-  }, []);
-
-  function getWindowSize() {
-    const { innerWidth, innerHeight } = window;
-    return { innerWidth, innerHeight };
-  }
-
-  const [isHide, setIsHide] = useState(false);
-
-  useEffect(() => {
-    if (windowSize.innerWidth > 768) {
-      setIsHide(true);
-    } else {
-      setIsHide(false);
-    }
-  }, [windowSize.innerWidth]);
 
   return (
     <div className="flex w-full min-h-screen items-center justify-center bg-[#141414]">

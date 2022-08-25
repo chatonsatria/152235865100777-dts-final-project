@@ -1,4 +1,4 @@
-import { useContext, useEffect, useState } from "react";
+import { useContext, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import RegisterFormInput from "../../components/auth/register/FormInput";
 import { createUserWithEmailAndPassword } from "firebase/auth";
@@ -22,7 +22,6 @@ const Register = () => {
   const handleSubmit = async (emailData, passwordData) => {
     const email = emailData;
     const password = passwordData;
-
     try {
       const { user } = await createUserWithEmailAndPassword(
         auth,
@@ -34,33 +33,6 @@ const Register = () => {
       setIsFailed(true);
     }
   };
-
-  // get screen widht
-  const [windowSize, setWindowSize] = useState(getWindowSize());
-  useEffect(() => {
-    function handleWindowResize() {
-      setWindowSize(getWindowSize());
-    }
-    window.addEventListener("resize", handleWindowResize);
-    return () => {
-      window.removeEventListener("resize", handleWindowResize);
-    };
-  }, []);
-
-  function getWindowSize() {
-    const { innerWidth, innerHeight } = window;
-    return { innerWidth, innerHeight };
-  }
-
-  const [isHide, setIsHide] = useState(false);
-
-  useEffect(() => {
-    if (windowSize.innerWidth > 768) {
-      setIsHide(true);
-    } else {
-      setIsHide(false);
-    }
-  }, [windowSize.innerWidth]);
 
   return (
     <div className="flex w-full min-h-screen items-center justify-center bg-[#141414]">

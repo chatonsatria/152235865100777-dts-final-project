@@ -16,7 +16,6 @@ const AuthContextProvider = (props) => {
   const setLoginHandler = (token, useremail) => {
     setAuthToken(token);
     setAuthEmail(useremail);
-    console.log("token from context", token);
   };
 
   const logoutHandler = async () => {
@@ -27,9 +26,7 @@ const AuthContextProvider = (props) => {
       setTimeout(() => {
         document.location.reload();
       }, 1000);
-    } catch (error) {
-      console.log(error);
-    }
+    } catch (error) {}
   };
 
   const contextValue = {

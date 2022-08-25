@@ -4,7 +4,6 @@ import SideBarLayout from "./SidebarLayout";
 
 const SidebarPlatform = () => {
   const { data, get } = useGet("platforms/lists/parents");
-  console.log("data platforms", data.feedback);
   const [toggleShow, setToggleShow] = useState(false);
   const [text, setText] = useState("Show all");
   const toggleShowhandler = () => {
@@ -18,34 +17,37 @@ const SidebarPlatform = () => {
 
   useEffect(() => {
     get();
+    // eslint-disable-next-line
   }, []);
 
   return (
     <div className="flex flex-col gap-y-3">
       <h1 className="text-xl font-bold text-white">Platforms</h1>
       {data.feedback &&
-        data.feedback.results.slice(0, +3).map((data) => (
-          <>
+        data.feedback.results
+          .slice(0, +3)
+          .map((data, key) => (
             <SideBarLayout
+              key={key}
               link={`/games/${data.id}`}
               buttonText={data.name}
               icon=""
             />
-          </>
-        ))}
+          ))}
 
       {toggleShow && (
         <>
           {data.feedback &&
-            data.feedback.results.slice(+3).map((data) => (
-              <>
+            data.feedback.results
+              .slice(+3)
+              .map((data, key) => (
                 <SideBarLayout
+                  key={key}
                   link={`/games/${data.id}`}
                   buttonText={data.name}
                   icon=""
                 />
-              </>
-            ))}
+              ))}
         </>
       )}
 

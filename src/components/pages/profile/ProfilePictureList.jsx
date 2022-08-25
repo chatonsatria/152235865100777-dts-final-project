@@ -1,7 +1,7 @@
 import { useContext, useState } from "react";
 import { AuthContext } from "../../../store/auth-context";
-import PopupChangeProfile from "../../popups/PopUpChange";
-import PopupChangeSuccess from "../../popups/PopUpChangeSuccess";
+import PopupChangeData from "../../popups/PopupChangeData";
+import PopupChangeSuccess from "../../popups/PopupChangeSuccess";
 
 const ProfilePictList = () => {
   const { useremail } = useContext(AuthContext);
@@ -83,7 +83,7 @@ const ProfilePictList = () => {
         hidden
       />
       {isChange && (
-        <PopupChangeProfile
+        <PopupChangeData
           display={isChange}
           close={() => setIsChange(false)}
           confirm={confirmHandler}

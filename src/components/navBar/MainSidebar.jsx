@@ -2,11 +2,7 @@ import SidebarAllGames from "./sidebarMenu/SidebarAllGames";
 import SidebarBrowse from "./sidebarMenu/SidebarBrowse";
 import SidebarGenres from "./sidebarMenu/SidebarGenres";
 import SidebarHome from "./sidebarMenu/SidebarHome";
-import SidebarNewRelease from "./sidebarMenu/SidebarNewRelease";
 import SidebarPlatform from "./sidebarMenu/SidebarPlatform";
-import SidebarReviews from "./sidebarMenu/SidebarReviews";
-import SidebarTop from "./sidebarMenu/SidebarTop";
-import SidebarUser from "./sidebarMenu/SidebarUser";
 
 const MainSidebar = () => {
   return (

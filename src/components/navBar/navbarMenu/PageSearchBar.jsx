@@ -9,11 +9,8 @@ const Search = () => {
   const { data, get } = useGetFilter("games");
   const [searchValue, setSearchValue] = useState("");
   const [searchFocus, setSearchFocus] = useState(false);
-  console.log(searchValue);
-  console.log(data.feedback);
   const searchFilter = (e) => {
     setSearchValue(e);
-    console.log("==>", e);
   };
 
   const hoverHandler = (id_plat, id_game) => {
@@ -23,6 +20,7 @@ const Search = () => {
 
   useEffect(() => {
     get(`&search=${searchValue}`, "filter");
+    // eslint-disable-next-line
   }, [searchValue]);
 
   return (

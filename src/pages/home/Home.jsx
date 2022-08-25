@@ -18,11 +18,13 @@ const Home = () => {
     } else {
       get(`&ordering=${slug}`, "filter");
     }
+    // eslint-disable-next-line
   }, [platformId, slug]);
 
   useEffect(() => {
     get();
     document.title = "R A W R";
+    // eslint-disable-next-line
   }, []);
 
   return (

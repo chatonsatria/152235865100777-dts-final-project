@@ -8,9 +8,9 @@ const FormInput = (props) => {
   const submitForm = (event) => {
     event.preventDefault();
     const enteredEmail = emailRef.current.value;
-    console.log("data email di form input", emailRef.current.value);
+    // console.log("data email di form input", emailRef.current.value);
     const enteredPassword = passwordRef.current.value;
-    console.log("data pw di form input", passwordRef.current.value);
+    // console.log("data pw di form input", passwordRef.current.value);
     props.submit(enteredEmail, enteredPassword);
   };
 

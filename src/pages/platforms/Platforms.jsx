@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import { useEffect } from "react";
 import PlatformsComp from "../../components/pages/platforms/Platforms";
 import useGet from "../../hooks/useGet";

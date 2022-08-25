@@ -1,9 +1,9 @@
-const PopUpLogout = (props) => {
+const PopupChangeData = (props) => {
   return (
     <div
       className={`${
         props.display ? "block" : "hidden"
-      } fixed z-[101] overflow-y-auto top-0 w-full h-full left-0 bg-gray-900 flex justify-center backdrop-blur`}
+      } fixed z-[400] overflow-y-auto top-0 w-full h-full left-0 bg-gray-900 flex justify-center backdrop-blur`}
       style={{ backgroundColor: "rgba(17,24,39, 0.75" }}
     >
       {/* pop up hapus data */}
@@ -16,13 +16,13 @@ const PopUpLogout = (props) => {
         <div className="inline-flex w-full justify-end gap-x-4">
           <button
             onClick={props.close}
-            className="w-auto px-4 h-[40px] font-normal text-base text-center bg-[#F5F5FF] text-[#103F7B]"
+            className="w-auto px-4 h-[40px] font-semibold text-base text-center rounded-md bg-[#F5F5FF] text-[#777777]"
           >
             Back
           </button>
           <button
             onClick={props.confirm}
-            className="w-auto px-4 h-[40px] font-normal text-base text-center bg-[#E50913] text-white"
+            className="w-auto px-4 h-[40px] font-semibold text-base text-center rounded-md bg-[#777777] text-white"
           >
             Confirm
           </button>
@@ -31,4 +31,4 @@ const PopUpLogout = (props) => {
     </div>
   );
 };
-export default PopUpLogout;
+export default PopupChangeData;

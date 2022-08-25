@@ -1,9 +1,9 @@
-const PopUpLogout = (props) => {
+const PopupLogout = (props) => {
   return (
     <div
       className={`${
         props.display ? "block" : "hidden"
-      } fixed z-[101] overflow-y-auto top-0 w-full h-full left-0 bg-gray-900 flex justify-center backdrop-blur`}
+      } fixed z-[400] overflow-y-auto top-0 w-full h-full left-0 bg-gray-900 flex justify-center backdrop-blur`}
       style={{ backgroundColor: "rgba(17,24,39, 0.75" }}
     >
       {/* pop up hapus data */}
@@ -31,4 +31,4 @@ const PopUpLogout = (props) => {
     </div>
   );
 };
-export default PopUpLogout;
+export default PopupLogout;

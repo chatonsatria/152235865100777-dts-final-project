@@ -14,7 +14,7 @@ const MainSideBar = React.lazy(() =>
 
 const Index = () => {
   return (
-    <div className="flex flex-col w-full min-h-screen bg-[#141414] text-white">
+    <div className="flex flex-col w-full min-h-screen justify-between bg-[#141414] text-white">
       <div className="inline-flex w-full gap-x-4 max-w-7xl mx-auto mt-11 px-8">
         <div className="hidden md:block fixed w-auto h-full">
           <React.Suspense fallback={<p>Loading...</p>}>
